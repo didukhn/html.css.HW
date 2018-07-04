@@ -1,0 +1,447 @@
+﻿$main_color: rgb(124, 212, 230);
+$bg_color: rgb(213, 218, 219);
+
+$md-screen: 995px;
+$tablet-screen: 768px;
+$mobile-l-screen: 425px;
+
+* {
+  box-sizing: border-box;
+}
+
+.d-inline-block{
+  display: inline-block;
+}
+
+.overflow-hidden{
+  overflow: hidden;
+}
+
+html, body {
+  font-family: 'Montserrat', sans-serif;;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+body{
+  margin: 0;
+  background-color: $bg_color; 
+}
+ 
+
+.border{
+  background: white;
+  border-top: solid 3px $main_color;
+  margin: 1rem;
+  padding: 0.5rem;
+}
+
+#blog{
+  .width-container {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  header {
+    background: white;
+    color: #373B41;
+  
+    nav {
+      margin: auto;
+      width: 100%;
+      padding: .5rem 0 .5rem 0;
+      .panel {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        .search{
+          position: relative;
+          display: flex;
+          align-items: center;
+          margin-right: 2rem;
+          input[type="search"]{
+            width: 180px;
+            padding: 8px;
+            border-radius: 0%;
+            border: 1px solid lightgray;
+          }
+          &::before {
+            position: absolute;
+            right: 13px;
+            font-size: 13px;
+            color: black;
+          }
+        }
+
+        .sozial_icons {
+          display: flex;
+          align-items: center;
+          font-size: 22px;
+          a {
+            color: #373B41;
+            text-decoration: none;
+            margin-right:1rem;
+            &:last-child{
+              margin-right: 0rem;
+            }
+            &:hover{
+              color: $main_color;
+            }
+          }
+        }
+      }
+      .burger-menu{
+        font-size:2rem;
+        display: none;
+        
+        @media screen and(max-width: $tablet-screen) {
+            display: inline-block;
+        }
+      }
+      
+       
+      
+      .collapse-panel{
+        @media screen and(max-width: $tablet-screen) {
+          .burger-menu{
+            display: inline-block;
+          }
+          display: none;
+          ul{     
+            text-align: center;
+            padding: 0;
+            
+              li{
+                display: block;
+                margin: 2rem;
+            
+                a{
+                  margin: 1rem;
+                }
+              }
+            }
+          
+        
+          &.opened {
+            display: flex;
+          }
+          
+          float: none;
+          position: absolute;
+          z-index: 100;
+          background: white;
+          top: 100px;
+          bottom: 0;
+          right: 0;
+          left: 0;
+//          display: flex;
+          flex-direction: column-reverse;
+          justify-content: flex-end;
+          .panel{    
+            display: block;
+            text-align: center;
+            position: absolute;
+            bottom: 0px;
+            margin-bottom: 3rem;
+            .search{
+              margin: auto;
+              float: unset ;
+              display: inline-flex;
+            }
+            .sozial_icons {
+              display: block ;
+              float: unset ;
+              margin: 2rem 0 1rem 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .content {
+    text-align: center;
+    width: 100%;
+    .card {
+      .photo{
+        position: relative;
+      }
+      $space-between-cards: 1rem;
+
+      text-align: left;
+      background: white;
+      margin: $space-between-cards;
+      width: calc(33% - #{$space-between-cards}*2);
+      float: left;
+      max-height: 400px;
+      min-height: 400px;
+
+      @media screen and(max-width: $tablet-screen) {
+        width: calc(50% - #{$space-between-cards}*2);
+      }
+
+      @media screen and(max-width: $mobile-l-screen) {
+        width: calc(100% - #{$space-between-cards}*2);
+      }
+
+      .other-info {
+        padding: 1.5rem;
+        .title {
+          h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 0.4rem;
+          }
+        }
+
+        .description {
+          overflow: hidden;
+          max-height: 4rem;
+          p {
+            margin-top: 0rem;
+            font-size: 1rem;
+            font-weight: 400;
+          }
+        }
+      }
+
+      .rate {
+          margin: 1.5rem 0rem 0.8rem 0;
+      }
+    }
+  }
+
+  #main{
+    width: 75%;
+    float: left;
+
+    @media screen and (max-width:$md-screen) {
+      width: 100%;
+    }
+  }
+  
+  ul,
+  ul li {
+    display: inline-block;
+    a {
+      color: black;
+      text-decoration: none;
+      &:hover {
+        border-bottom: solid 3px $main_color;
+      }
+    }
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+  
+  ul li {
+    &:not(:last-child) {
+      margin-right: 4rem;
+    }
+    margin-top: 1.5rem;
+  }
+
+  .float {
+    &-left {
+      float: left;
+    }
+
+    &-right {
+      float: right;
+    }
+  }
+  
+  #aside {
+    text-align: left;
+    width: 25%;
+    float: left;
+
+    @media screen and (max-width:$md-screen){
+      width: 100%;
+    }
+
+    .info {
+      padding: 3rem;
+      .photo{
+        text-align: center;
+        
+      }
+      .name {
+        padding: 1rem 0 1rem 0;
+        text-align: center;
+        font-size: 2rem;
+      }
+      .sozial_icons {
+        font-size: 2rem;
+        text-align: center;
+        padding: 1rem 0 0rem 0;
+        a {
+          color: grey;
+          margin-right:1rem;
+          &:hover {
+            color:$main_color;
+          }
+        }
+      }
+    }
+
+    .subscribe {
+      h2 {
+        text-align: center;
+      }
+
+      input {
+          width: 100%;
+          padding: 8px;
+          border-radius: 0;
+          border: 1px solid lightgray;
+          margin: .5rem 0 .5rem 0;
+      }
+
+      button {
+        background: white;
+        color: $main_color;
+        border-radius: 0;
+        font-weight: 500;
+        border: 1px solid $main_color;
+        font-size: 17px;
+        padding: 14px 44px;
+        width: 100%;
+        &:hover {
+          background: $main_color;
+          color:white;
+        }
+      }
+    }
+
+    // TODO: fix with before
+    .search {
+      position: relative;
+      input {
+        width: 100%;
+        padding: 8px;
+        border-radius: 0;
+        border: 1px solid lightgray;
+      }
+      .fas.fa-search {
+          position: absolute;
+          right: 13px;
+          font-size: 13px;
+          top: 16px;
+          color: black;
+      }
+    }
+
+    .tags {
+      h2 {
+        text-align: center;
+      }
+    }
+    
+    .comments{
+      .comment-wrapper {
+        margin: 1rem .5rem 1rem .5rem;
+
+        .photo {
+          width: 20%;
+          margin: 0 .5rem 0 .5rem;
+        }
+
+        .comment-info {
+          width: 70%;
+        }
+
+        .photo, .comment-info {
+          display: inline-block;
+        }
+
+        .name, .comment-text {
+          display: block;
+        }
+
+        .name {
+          font-size: 1rem;
+          font-weight: 600;
+        }
+
+        .comment-text {
+          font-size: 0.8rem;
+          color: dimgray;
+          font-weight: 500;
+        }
+
+        .date {
+          font-size: 0.6rem;
+          font-weight: 400;
+          color: gray;
+          float: right;
+        }
+      }
+
+      h2 {
+        text-align: center;
+      }
+      
+    }
+  }
+
+  &>footer {
+     padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: lightslategrey;
+    p, .sozial_icons a {
+      color: lightsteelblue;
+    }
+    p{
+      margin: 0;
+    }
+   .sozial_icons{
+      font-size: 20px;
+      a{    
+      margin-left: 1rem;
+      text-decoration: none;
+      }
+    }
+  }
+}
+
+
+.meta {
+  position: absolute;
+  display: inline-block;
+  bottom: 0;
+  left: 40%;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+
+  &>*{
+    padding: 0.7rem;
+  }
+  .meta-comments {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $main_color;
+    transform:  rotateX(0deg) translateZ(19px);
+  }
+
+  .meta-published {
+    background: $bg_color;
+    transform: translateY(19px) rotateX(-90deg);
+  }
+
+  &:hover {
+    transform: rotateX(90deg);
+  }
+  
+}
+
+
