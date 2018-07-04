@@ -1,3 +1,2 @@
-## html.css.HW
-## This is my blog :)
-## All content was borrowed from https://lifehacker.com/
+### This is my blog page :)
+### All content was borrowed from https://lifehacker.com/
